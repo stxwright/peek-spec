@@ -1,0 +1,14 @@
+format: 2
+id: dev.peek.test.v2-bad-selector
+version: 1
+name: V2 bad selector
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li[??"
+fields:
+  t: "span.t"
+key: t
+title: "Broken"
+columns: [t]

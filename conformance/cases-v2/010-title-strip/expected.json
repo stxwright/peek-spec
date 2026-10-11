@@ -1,0 +1,13 @@
+{
+  "extract": {
+    "rows": [
+      {"route": "5"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Live departures 5",
+    "headers": ["ROUTE"],
+    "rows": [["5"]]
+  }
+}

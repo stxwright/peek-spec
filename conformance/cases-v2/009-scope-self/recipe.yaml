@@ -1,0 +1,15 @@
+format: 2
+id: dev.peek.test.v2-scope-self
+version: 1
+name: V2 scope self
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.s"
+fields:
+  me: {sel: ":scope", attr: "data-r"}
+  txt: {sel: ":scope"}
+key: me
+title: "Self"
+columns: [me, txt]

@@ -1,0 +1,15 @@
+format: 2
+id: dev.peek.test.v2-limit
+version: 1
+name: V2 limit
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.s"
+fields:
+  t: "span.t"
+key: t
+limit: 2
+title: "First two"
+columns: [t]

@@ -1,0 +1,16 @@
+format: 2
+id: dev.peek.test.v2-rows-basic
+version: 1
+name: V2 rows basic
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.s"
+fields:
+  t: "span.t"
+  p: "span.p"
+key: t
+limit: 10
+title: "Stops"
+columns: [t, p]

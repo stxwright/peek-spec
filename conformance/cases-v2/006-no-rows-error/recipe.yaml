@@ -1,0 +1,14 @@
+format: 2
+id: dev.peek.test.v2-no-rows
+version: 1
+name: V2 no rows
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.nothing"
+fields:
+  t: "span.t"
+key: t
+title: "Empty"
+columns: [t]

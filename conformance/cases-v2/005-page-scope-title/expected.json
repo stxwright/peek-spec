@@ -1,0 +1,14 @@
+{
+  "extract": {
+    "rows": [
+      {"stop_name": "Central", "route": "5"},
+      {"stop_name": "Central", "route": "12"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Central departures",
+    "headers": ["ROUTE"],
+    "rows": [["5"], ["12"]]
+  }
+}

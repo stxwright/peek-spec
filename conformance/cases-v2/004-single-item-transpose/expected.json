@@ -1,0 +1,13 @@
+{
+  "extract": {
+    "rows": [
+      {"a": "Alpha", "b": null, "c": null}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Station Alpha",
+    "headers": null,
+    "rows": [["A", "Alpha"]]
+  }
+}

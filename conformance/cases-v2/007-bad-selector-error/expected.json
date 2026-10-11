@@ -1,0 +1,7 @@
+{
+  "extract": {
+    "rows": [],
+    "error_prefix": "rows selector failed: "
+  },
+  "table": null
+}

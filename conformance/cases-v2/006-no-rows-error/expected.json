@@ -1,0 +1,7 @@
+{
+  "extract": {
+    "rows": [],
+    "error": "no rows matched: li.nothing"
+  },
+  "table": null
+}

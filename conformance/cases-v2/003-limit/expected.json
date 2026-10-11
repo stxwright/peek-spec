@@ -1,0 +1,14 @@
+{
+  "extract": {
+    "rows": [
+      {"t": "A"},
+      {"t": "B"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "First two",
+    "headers": ["T"],
+    "rows": [["A"], ["B"]]
+  }
+}

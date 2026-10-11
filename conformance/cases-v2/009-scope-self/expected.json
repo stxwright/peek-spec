@@ -1,0 +1,14 @@
+{
+  "extract": {
+    "rows": [
+      {"me": "R1", "txt": "hello"},
+      {"me": "R2", "txt": "world"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Self",
+    "headers": ["ME", "TXT"],
+    "rows": [["R1", "hello"], ["R2", "world"]]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extract": {
+    "rows": [
+      {"t": "Go", "u": "/x", "i": "42"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Link",
+    "headers": null,
+    "rows": [["T", "Go"], ["U", "/x"], ["I", "42"]]
+  }
+}

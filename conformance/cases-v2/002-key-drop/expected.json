@@ -1,0 +1,14 @@
+{
+  "extract": {
+    "rows": [
+      {"t": "A", "p": "1"},
+      {"t": "C", "p": "3"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Stops",
+    "headers": ["T", "P"],
+    "rows": [["A", "1"], ["C", "3"]]
+  }
+}

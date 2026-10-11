@@ -1,0 +1,14 @@
+format: 2
+id: dev.peek.test.v2-attr-read
+version: 1
+name: V2 attr read
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+fields:
+  t: "a.l"
+  u: {sel: "a.l", attr: "href"}
+  i: {sel: "a.l", attr: "data-id"}
+title: "Link"
+columns: [t, u, i]

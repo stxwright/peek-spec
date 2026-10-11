@@ -5,10 +5,14 @@ extraction semantics, and the conformance suite every client must pass.
 
 ## Layout
 
-- `peek_spec.md` — system specification (draft). Start here.
-- `schemas/` — JSON Schemas: `recipe`, `registry`, `index`, `result`.
-- `conformance/` — executable conformance cases (`cases/`, `cases-optional/`)
-  plus `README.md` describing the harness.
+- `peek_spec.md` — system specification (draft, aspirational v1 track). Start here.
+- `docs/extraction-v2.md` — **normative** extraction semantics for the
+  implemented `format: 2` profile. This is what ships; read this first.
+- `schemas/` — JSON Schemas: `recipe`, `registry`, `index`, `result`
+  (v1 track; the registry does not currently validate against these).
+- `conformance/` — `cases/` (v1 aspirational suite) and `cases-v2/`
+  (implemented profile; **required** for a v2 conformance claim) plus
+  per-directory READMEs describing each harness.
 - `scripts/` — `validate_schemas.py`, `build_conformance_cases.py`,
   `validate_conformance_cases.py`.
 

@@ -1,0 +1,14 @@
+format: 2
+id: dev.peek.test.v2-single-item
+version: 1
+name: V2 single item
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+fields:
+  a: "span.a"
+  b: "span.b"
+  c: "span.missing"
+title: "Station {a}"
+columns: [a, b, c]

@@ -1,0 +1,14 @@
+format: 2
+id: dev.peek.test.v2-title-strip
+version: 1
+name: V2 title strip
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.s"
+fields:
+  route: "span.r"
+key: route
+title: "Live {missing}   departures {route}"
+columns: [route]

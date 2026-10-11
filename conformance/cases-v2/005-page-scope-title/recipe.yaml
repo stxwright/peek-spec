@@ -1,0 +1,15 @@
+format: 2
+id: dev.peek.test.v2-page-scope
+version: 1
+name: V2 page scope
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows: "li.s"
+fields:
+  stop_name: {sel: "#stop", attr: "data-name", scope: page}
+  route: "span.r"
+key: route
+title: "{stop_name} departures"
+columns: [route]
