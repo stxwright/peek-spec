@@ -25,7 +25,7 @@ by the registry validator. All keys are strings.
 | `description` | yes | 1–280 chars | — | Browse card |
 | `params` | no | map string→string | `{}` | Plain defaults; no types, no validation |
 | `fetch` | yes | object (§2) | — | |
-| `rows` | no | CSS selector, `<= 500` chars | absent | Absent = single-item (document) recipe |
+| `rows` | no | CSS selector (§4) or list of `{sel, values}` groups (§4.6), `<= 500` chars per selector | absent | Absent = single-item (document) recipe |
 | `fields` | yes | non-empty map (§3) | — | |
 | `key` | iff `rows` present | names a row-scoped field | — | Rows with empty `key` value are dropped |
 | `limit` | no | int 1–100 | `10` | Rows only |
@@ -73,6 +73,11 @@ The extractor runs in-page as a single IIFE. Equivalent pseudo-code:
 ```
 items = rowsSel ? document.querySelectorAll(rowsSel)   // may throw
         : [document]
+```
+For the list form, items are the per-group matches concatenated in listed
+order (see §4.6); the loop below is unchanged and `limit` counts kept rows
+across all groups.
+```
 pageVals = { k: readField(document, fdef)
              for k, fdef in fields if fdef.scope == 'page' }
 rows = []
@@ -142,6 +147,20 @@ produced in exactly two cases:
 A recipe-specific empty/board notice (`empty:`) is **not part of v2**; rows
 empty with no error is simply empty data.
 
+### 4.6 Row groups
+
+`rows` may instead be a non-empty list of groups, each
+`{sel: "<css>", values: {name: "literal", ...}}`. Groups evaluate in listed
+order; each group's matches are extracted exactly like §4 rows, then the
+group's `values` fill any field the extraction left empty (literals only —
+no `{ref}` interpolation; extraction wins ties). Use this when the section
+label lives in an ancestor the row cannot see (one recipe over several
+labeled blocks). `columns` and `title` may name group-value keys (title
+still resolves from row zero); `key` MUST name an extracted row field.
+A group `sel` that throws produces `rows selector failed: <message>` naming
+that selector; zero rows overall reports `no rows matched` with the group
+sels joined by ` + `.
+
 ## 5. Title and link templates
 
 `interpolate(template, params, fields)`:
@@ -152,8 +171,8 @@ empty with no error is simply empty data.
 
 Consequences: unresolvable refs vanish silently (no error); title resolves
 from **row zero only**; an empty title falls back to the recipe `name` at
-render time. `title` refs MUST be params or fields; `link` refs MUST be
-params (validator-enforced).
+render time. `title` refs MUST be params, fields, or group-value keys;
+`link` refs MUST be params (validator-enforced).
 
 ## 6. Table building
 

@@ -1,0 +1,14 @@
+{
+  "extract": {
+    "rows": [
+      {"t": "A", "p": "1", "dealer": "Normal"},
+      {"t": "C", "p": "3", "dealer": "Mirage"}
+    ],
+    "error": null
+  },
+  "table": {
+    "title": "Board Normal",
+    "headers": ["DEALER", "T", "P"],
+    "rows": [["Normal", "A", "1"], ["Mirage", "C", "3"]]
+  }
+}

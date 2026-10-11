@@ -70,6 +70,7 @@ Each case is a directory with:
 | `008-attr-read` | §4.1 verbatim `getAttribute` |
 | `009-scope-self` | §4.2 `sel: ":scope"` |
 | `010-title-strip` | §5 unresolvable refs stripped, ws collapsed |
+| `011-row-groups` | §4.6 groups: const merge, key-drop, cross-group limit |
 
 Note: fixtures test engine behaviour, which is wider than what the registry
 validator permits authors to write. `010-title-strip` is intentionally

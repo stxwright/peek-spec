@@ -1,0 +1,20 @@
+format: 2
+id: dev.peek.test.v2-row-groups
+version: 1
+name: V2 row groups
+description: Conformance fixture, not a real recipe.
+fetch:
+  url: "https://example.com/test"
+  allow: ["example.com"]
+rows:
+  - sel: "#normal li.s"
+    values: {dealer: Normal}
+  - sel: "#mirage li.s"
+    values: {dealer: Mirage}
+fields:
+  t: "span.t"
+  p: "span.p"
+key: t
+limit: 2
+title: "Board {dealer}"
+columns: [dealer, t, p]
