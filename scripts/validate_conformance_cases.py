@@ -47,6 +47,35 @@ def main():
         except Exception as e:
             errors.append(f"{d.name} expected.json validation error: {e}")
 
+    # v2 series (implemented profile): structural check only — behavioural
+    # pinning is executed by clients (peek-cli tests/test_conformance.py).
+    v2_dir = root / "conformance" / "cases-v2"
+    v2_cases = sorted(p for p in v2_dir.iterdir() if p.is_dir()) if v2_dir.is_dir() else []
+    for d in v2_cases:
+        for fname in ["recipe.yaml", "response.body", "expected.json"]:
+            if not (d / fname).exists():
+                errors.append(f"cases-v2/{d.name}: missing {fname}")
+        try:
+            with open(d / "recipe.yaml", "r", encoding="utf-8") as f:
+                r_data = yaml.safe_load(f)
+            if not isinstance(r_data, dict) or r_data.get("format") != 2:
+                errors.append(f"cases-v2/{d.name}: recipe.yaml must be a format: 2 mapping")
+        except Exception as e:
+            errors.append(f"cases-v2/{d.name} recipe.yaml error: {e}")
+        try:
+            with open(d / "expected.json", "r", encoding="utf-8") as f:
+                exp_data = json.load(f)
+            ex = exp_data.get("extract")
+            if not isinstance(ex, dict) or not isinstance(ex.get("rows"), list) or \
+                    ("error" not in ex and "error_prefix" not in ex):
+                errors.append(f"cases-v2/{d.name}: expected.json needs "
+                              f"extract{{rows, error|error_prefix}}")
+            if "table" not in exp_data:
+                errors.append(f"cases-v2/{d.name}: expected.json needs table key")
+        except Exception as e:
+            errors.append(f"cases-v2/{d.name} expected.json error: {e}")
+    print(f"Checked {len(v2_cases)} cases-v2 fixtures structurally.")
+
     if errors:
         print(f"FAILED with {len(errors)} errors:")
         for err in errors[:10]:

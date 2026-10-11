@@ -70,3 +70,8 @@ Each case is a directory with:
 | `008-attr-read` | §4.1 verbatim `getAttribute` |
 | `009-scope-self` | §4.2 `sel: ":scope"` |
 | `010-title-strip` | §5 unresolvable refs stripped, ws collapsed |
+
+Note: fixtures test engine behaviour, which is wider than what the registry
+validator permits authors to write. `010-title-strip` is intentionally
+registry-invalid (`title: {missing} is not a param or field`) — the engine
+must still degrade gracefully if such a recipe is loaded locally.
