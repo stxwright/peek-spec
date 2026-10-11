@@ -1,0 +1,36 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.type-int",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "v": -15
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "-15",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

@@ -1,0 +1,27 @@
+spec: 1
+id: dev.peek.test.tx-ws
+version: 1
+name: Test tx-ws
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    trimmed:
+      from:
+      - css: p
+      transforms:
+      - op: trim
+    collapsed:
+      from:
+      - css: p
+      transforms:
+      - op: collapse_ws
+display:
+  layout: list
+  row:
+    primary: '{collapsed}'

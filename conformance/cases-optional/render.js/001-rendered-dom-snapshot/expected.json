@@ -1,0 +1,38 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.opt-render-sim",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "ruin_prob": "41.0%",
+      "median_port": "\u00a326,250",
+      "time_to_ruin": "62 mo (5.2 yr)"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Ruin: 41.0%",
+        "secondary": "Median: \u00a326,250 (62 mo (5.2 yr))",
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

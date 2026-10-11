@@ -1,0 +1,25 @@
+spec: 1
+id: dev.peek.test.tpl-sub
+version: 1
+name: Test tpl-sub
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    city:
+      from:
+      - css: '#city'
+display:
+  title: '{params.code}: {city}'
+  layout: list
+  row:
+    primary: '{city}'
+params:
+- key: code
+  label: Code
+  type: string

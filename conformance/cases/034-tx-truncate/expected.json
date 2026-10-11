@@ -1,0 +1,36 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.tx-truncate",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "val": "Hello Unicode \ud83d\ude80 "
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Hello Unicode \ud83d\ude80 ",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

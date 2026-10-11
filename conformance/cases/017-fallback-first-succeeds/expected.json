@@ -1,0 +1,36 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.fb-first-ok",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "v": "Primary Value"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Primary Value",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

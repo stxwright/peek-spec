@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://specs.peek.dev/v1/registry.schema.json",
+  "title": "Peek Registry Configuration Specification v1",
+  "type": "object",
+  "required": [
+    "format",
+    "id",
+    "name",
+    "base_url",
+    "repo",
+    "submit",
+    "report_broken_url_template",
+    "signing_keys",
+    "policy",
+    "blocked_domains",
+    "contact"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "base_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "repo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "submit": {
+      "type": "object",
+      "required": ["repo", "issue_form_url"],
+      "additionalProperties": false,
+      "properties": {
+        "repo": { "type": "string" },
+        "issue_form_url": { "type": "string", "format": "uri" }
+      }
+    },
+    "report_broken_url_template": {
+      "type": "string"
+    },
+    "signing_keys": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["key_id", "algorithm", "public_key", "not_after"],
+        "additionalProperties": false,
+        "properties": {
+          "key_id": { "type": "string" },
+          "algorithm": { "type": "string", "enum": ["ed25519"] },
+          "public_key": { "type": "string" },
+          "not_after": { "type": "string" }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["min_interval_s", "health", "canary"],
+      "additionalProperties": false,
+      "properties": {
+        "min_interval_s": { "type": "integer", "minimum": 60 },
+        "health": {
+          "type": "object",
+          "required": [
+            "broken_after_consecutive_failures",
+            "unlist_after_days_broken",
+            "archive_after_days_broken"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "broken_after_consecutive_failures": { "type": "integer", "minimum": 1 },
+            "unlist_after_days_broken": { "type": "integer", "minimum": 1 },
+            "archive_after_days_broken": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "canary": {
+          "type": "object",
+          "required": ["cron", "per_host_spacing_s"],
+          "additionalProperties": false,
+          "properties": {
+            "cron": { "type": "string" },
+            "per_host_spacing_s": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "blocked_domains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["domain", "reason", "date"],
+        "additionalProperties": false,
+        "properties": {
+          "domain": { "type": "string" },
+          "reason": { "type": "string" },
+          "date": { "type": "string" }
+        }
+      }
+    },
+    "contact": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.min-items-pass",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {},
+    "lists": {
+      "l": [
+        {
+          "v": "One"
+        },
+        {
+          "v": "Two"
+        }
+      ]
+    }
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "One",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      },
+      {
+        "primary": "Two",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

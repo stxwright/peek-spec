@@ -1,0 +1,29 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.min-items-zero",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {},
+    "lists": {
+      "l": []
+    }
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [],
+    "items": null,
+    "empty_text": "No items found",
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

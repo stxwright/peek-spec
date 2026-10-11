@@ -1,0 +1,39 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.disp-kv",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "cpu": "45%",
+      "mem": "12GB"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": "System Status",
+    "layout": "kv",
+    "rows": null,
+    "items": [
+      {
+        "label": "CPU Usage",
+        "value": "45%"
+      },
+      {
+        "label": "Memory",
+        "value": "12GB"
+      }
+    ],
+    "empty_text": null,
+    "footer": "Host: srv1",
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

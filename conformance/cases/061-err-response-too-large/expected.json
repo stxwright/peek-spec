@@ -1,0 +1,21 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.err-too-large",
+    "version": 1
+  },
+  "status": "error",
+  "data": null,
+  "view": null,
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": {
+    "code": "RESPONSE_TOO_LARGE",
+    "message": "Response body exceeded cap of 1024 bytes",
+    "path": "response.body",
+    "http_status": null
+  }
+}

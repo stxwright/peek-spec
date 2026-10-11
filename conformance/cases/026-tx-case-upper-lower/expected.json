@@ -1,0 +1,37 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.tx-case",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "u": "MIXED CASE T\u00dcRK",
+      "l": "mixed case t\u00fcrk"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "MIXED CASE T\u00dcRK",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

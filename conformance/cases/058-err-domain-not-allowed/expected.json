@@ -1,0 +1,21 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.err-domain",
+    "version": 1
+  },
+  "status": "error",
+  "data": null,
+  "view": null,
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": {
+    "code": "DOMAIN_NOT_ALLOWED",
+    "message": "Host unauthorized.org is not in allowed_domains",
+    "path": "fetch.url",
+    "http_status": null
+  }
+}

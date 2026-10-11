@@ -1,0 +1,27 @@
+spec: 1
+id: dev.peek.test.tx-case
+version: 1
+name: Test tx-case
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    u:
+      from:
+      - css: '#txt'
+      transforms:
+      - op: upper
+    l:
+      from:
+      - css: '#txt'
+      transforms:
+      - op: lower
+display:
+  layout: list
+  row:
+    primary: '{u}'

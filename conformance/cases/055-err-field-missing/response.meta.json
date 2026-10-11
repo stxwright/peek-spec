@@ -1,0 +1,7 @@
+{
+  "status": 200,
+  "final_url": "https://example.com/test",
+  "headers": {
+    "content-type": "text/html; charset=utf-8"
+  }
+}

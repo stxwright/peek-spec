@@ -1,0 +1,20 @@
+spec: 1
+id: dev.peek.test.css-combinators
+version: 1
+name: Test css-combinators
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    detail:
+      from:
+      - css: .container > p.lead + p
+display:
+  layout: list
+  row:
+    primary: '{detail}'

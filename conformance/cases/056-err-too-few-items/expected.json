@@ -1,0 +1,21 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.err-few-items",
+    "version": 1
+  },
+  "status": "error",
+  "data": null,
+  "view": null,
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": {
+    "code": "TOO_FEW_ITEMS",
+    "message": "Fewer than min_items valid items",
+    "path": "lists.l",
+    "http_status": null
+  }
+}

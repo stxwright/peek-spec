@@ -1,0 +1,24 @@
+spec: 1
+id: dev.peek.test.tx-split-neg
+version: 1
+name: Test tx-split-neg
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    last:
+      from:
+      - css: p
+      transforms:
+      - op: split
+        sep: /
+        index: -1
+display:
+  layout: list
+  row:
+    primary: '{last}'

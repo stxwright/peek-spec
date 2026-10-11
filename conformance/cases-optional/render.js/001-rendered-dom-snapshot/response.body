@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><body>
+    <div class="metric-row">
+      <div class="metric"><div id="m-ror" class="value danger">41.0%</div></div>
+      <div class="metric"><div id="m-median" class="value">£26,250</div></div>
+      <div class="metric"><div id="m-yr" class="value">62 mo (5.2 yr)</div></div>
+    </div></body></html>

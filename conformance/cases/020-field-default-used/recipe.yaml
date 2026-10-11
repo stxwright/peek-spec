@@ -1,0 +1,21 @@
+spec: 1
+id: dev.peek.test.field-default
+version: 1
+name: Test field-default
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    badge:
+      from:
+      - css: span.badge
+      default: N/A
+display:
+  layout: list
+  row:
+    primary: '{badge}'

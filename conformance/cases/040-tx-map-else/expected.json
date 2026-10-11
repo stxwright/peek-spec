@@ -1,0 +1,39 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.tx-map-else",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "sev": "neutral"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Status",
+        "secondary": null,
+        "trailing": null,
+        "badge": {
+          "text": "State",
+          "severity": "neutral"
+        }
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

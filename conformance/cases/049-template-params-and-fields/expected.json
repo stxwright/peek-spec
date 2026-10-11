@@ -1,0 +1,36 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.tpl-sub",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "city": "London"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": "LON: London",
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "London",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

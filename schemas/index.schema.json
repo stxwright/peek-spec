@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://specs.peek.dev/v1/index.schema.json",
+  "title": "Peek Index Specification v1",
+  "type": "object",
+  "required": [
+    "format",
+    "registry_id",
+    "generated_at",
+    "sequence",
+    "min_client_spec",
+    "recipes",
+    "revoked"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "type": "integer",
+      "const": 1
+    },
+    "registry_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "integer",
+      "description": "Unix timestamp of generation (anti-rollback counter)"
+    },
+    "min_client_spec": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "recipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version",
+          "name",
+          "description",
+          "updated_at",
+          "health",
+          "listed",
+          "bundle"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "version": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["key", "label", "type"],
+              "additionalProperties": false,
+              "properties": {
+                "key": { "type": "string" },
+                "label": { "type": "string" },
+                "type": { "type": "string" },
+                "required": { "type": "boolean" },
+                "default": {},
+                "placeholder": { "type": "string" },
+                "help": { "type": "string" },
+                "pattern": { "type": "string" },
+                "min": { "type": "integer" },
+                "max": { "type": "integer" },
+                "options": { "type": "array" }
+              }
+            }
+          },
+          "updated_at": { "type": "string" },
+          "health": {
+            "type": "object",
+            "required": ["state", "checked_at"],
+            "additionalProperties": false,
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": ["healthy", "degraded", "broken", "blocked", "unknown"]
+              },
+              "checked_at": { "type": "string" },
+              "since": { "type": "string" }
+            }
+          },
+          "listed": { "type": "boolean" },
+          "bundle": {
+            "type": "object",
+            "required": ["path", "sha256", "size"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "type": "string" },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "size": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "revoked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "versions", "severity", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "versions": { "type": "string" },
+          "severity": { "type": "string", "enum": ["disable", "warn"] },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  }
+}

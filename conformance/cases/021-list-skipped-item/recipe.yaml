@@ -1,0 +1,26 @@
+spec: 1
+id: dev.peek.test.list-skipped
+version: 1
+name: Test list-skipped
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  lists:
+    items:
+      items:
+      - css: ul li
+      min_items: 1
+      fields:
+        heading:
+          from:
+          - css: h3
+display:
+  layout: list
+  source: items
+  row:
+    primary: '{heading}'

@@ -1,0 +1,51 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.css-scope-list",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {},
+    "lists": {
+      "rows": [
+        {
+          "c1": "Row 1",
+          "c2": "Meta 1"
+        },
+        {
+          "c1": "Row 2",
+          "c2": "Meta 2"
+        }
+      ]
+    }
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Row 1",
+        "secondary": "Meta 1",
+        "trailing": null,
+        "badge": null
+      },
+      {
+        "primary": "Row 2",
+        "secondary": "Meta 2",
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

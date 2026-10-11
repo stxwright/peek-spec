@@ -1,0 +1,24 @@
+spec: 1
+id: dev.peek.test.tx-regex-replace
+version: 1
+name: Test tx-regex-replace
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    masked:
+      from:
+      - css: p
+      transforms:
+      - op: regex_replace
+        pattern: '#(\d+)'
+        with: '#[REDACTED $1]'
+display:
+  layout: list
+  row:
+    primary: '{masked}'

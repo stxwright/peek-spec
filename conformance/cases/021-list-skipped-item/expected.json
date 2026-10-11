@@ -1,0 +1,55 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.list-skipped",
+    "version": 1
+  },
+  "status": "degraded",
+  "data": {
+    "fields": {},
+    "lists": {
+      "items": [
+        {
+          "heading": "Item 1"
+        },
+        {
+          "heading": "Item 3"
+        }
+      ]
+    }
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Item 1",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      },
+      {
+        "primary": "Item 3",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [
+      {
+        "list": "items",
+        "index": 1,
+        "reason": "FIELD_MISSING:heading"
+      }
+    ],
+    "warnings": []
+  },
+  "error": null
+}

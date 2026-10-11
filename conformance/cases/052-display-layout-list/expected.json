@@ -1,0 +1,45 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.disp-list",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {},
+    "lists": {
+      "trains": [
+        {
+          "train": "Train 1",
+          "plat": "Plat 1",
+          "stat": "ok"
+        }
+      ]
+    }
+  },
+  "view": {
+    "title": "Departures",
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Train 1",
+        "secondary": "Plat 1",
+        "trailing": "Dep",
+        "badge": {
+          "text": "Normal",
+          "severity": "ok"
+        }
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": "Last check",
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

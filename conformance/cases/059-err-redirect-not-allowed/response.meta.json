@@ -1,0 +1,7 @@
+{
+  "status": 200,
+  "final_url": "https://malicious.com/landing",
+  "headers": {
+    "content-type": "text/html; charset=utf-8"
+  }
+}

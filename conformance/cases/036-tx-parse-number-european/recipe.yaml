@@ -1,0 +1,25 @@
+spec: 1
+id: dev.peek.test.tx-parse-num-eu
+version: 1
+name: Test tx-parse-num-eu
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    price:
+      from:
+      - css: p
+      transforms:
+      - op: parse_number
+        decimal: ','
+        thousands: .
+      type: number
+display:
+  layout: list
+  row:
+    primary: '{price}'

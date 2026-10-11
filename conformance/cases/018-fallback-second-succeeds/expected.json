@@ -1,0 +1,41 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.fb-second-ok",
+    "version": 1
+  },
+  "status": "degraded",
+  "data": {
+    "fields": {
+      "v": "Secondary Fallback"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Secondary Fallback",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [
+      {
+        "path": "fields.v",
+        "locator_index": 1
+      }
+    ],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

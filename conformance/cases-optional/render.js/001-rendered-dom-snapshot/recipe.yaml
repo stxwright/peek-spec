@@ -1,0 +1,29 @@
+spec: 1
+id: dev.peek.test.opt-render-sim
+version: 1
+name: Test opt-render-sim
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 900
+  render: js
+  wait_for: '#m-yr.value'
+extract:
+  fields:
+    ruin_prob:
+      from:
+      - css: '#m-ror'
+    median_port:
+      from:
+      - css: '#m-median'
+    time_to_ruin:
+      from:
+      - css: '#m-yr'
+display:
+  layout: list
+  row:
+    primary: 'Ruin: {ruin_prob}'
+    secondary: 'Median: {median_port} ({time_to_ruin})'

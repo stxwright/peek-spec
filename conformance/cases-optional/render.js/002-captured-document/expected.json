@@ -1,0 +1,37 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.opt-render-cap",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {
+      "station": "Rendered Main Page",
+      "live_alert": "Signal Failure"
+    },
+    "lists": {}
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "Rendered Main Page: Signal Failure",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

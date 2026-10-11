@@ -1,0 +1,25 @@
+spec: 1
+id: dev.peek.test.field-optional
+version: 1
+name: Test field-optional
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  fields:
+    title:
+      from:
+      - css: h1
+    subtitle:
+      from:
+      - css: h2
+      optional: true
+display:
+  layout: list
+  row:
+    primary: '{title}'
+    secondary: '{subtitle}'

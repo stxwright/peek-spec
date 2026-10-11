@@ -1,0 +1,58 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.list-limit",
+    "version": 1
+  },
+  "status": "ok",
+  "data": {
+    "fields": {},
+    "lists": {
+      "l": [
+        {
+          "n": "1"
+        },
+        {
+          "n": "2"
+        },
+        {
+          "n": "3"
+        }
+      ]
+    }
+  },
+  "view": {
+    "title": null,
+    "layout": "list",
+    "rows": [
+      {
+        "primary": "1",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      },
+      {
+        "primary": "2",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      },
+      {
+        "primary": "3",
+        "secondary": null,
+        "trailing": null,
+        "badge": null
+      }
+    ],
+    "items": null,
+    "empty_text": null,
+    "footer": null,
+    "link": null
+  },
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": null
+}

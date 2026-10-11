@@ -1,0 +1,8 @@
+{
+  "alerts": [
+    {
+      "id": 101,
+      "title": "Signal Failure"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+spec: 1
+id: dev.peek.test.disp-list
+version: 1
+name: Test disp-list
+description: Conformance test recipe
+fetch:
+  url: https://example.com/test
+  format: html
+  allowed_domains:
+  - example.com
+  min_interval_s: 300
+extract:
+  lists:
+    trains:
+      items:
+      - css: ul li
+      fields:
+        train:
+          from:
+          - css: .t
+        plat:
+          from:
+          - css: .p
+        stat:
+          from:
+          - css: .s
+          type: severity
+display:
+  title: Departures
+  layout: list
+  source: trains
+  row:
+    primary: '{train}'
+    secondary: '{plat}'
+    trailing: Dep
+    badge:
+      text: Normal
+      severity: '{stat}'
+  footer: Last check

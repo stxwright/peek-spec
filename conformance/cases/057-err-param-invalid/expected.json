@@ -1,0 +1,21 @@
+{
+  "spec": 1,
+  "recipe": {
+    "id": "dev.peek.test.err-param",
+    "version": 1
+  },
+  "status": "error",
+  "data": null,
+  "view": null,
+  "diagnostics": {
+    "fallbacks_used": [],
+    "skipped_items": [],
+    "warnings": []
+  },
+  "error": {
+    "code": "PARAM_INVALID",
+    "message": "Parameter code does not match pattern",
+    "path": "params.code",
+    "http_status": null
+  }
+}

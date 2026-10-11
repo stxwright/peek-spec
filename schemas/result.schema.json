@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://specs.peek.dev/v1/result.schema.json",
+  "title": "Peek Result Document Specification v1",
+  "type": "object",
+  "required": ["spec", "recipe", "status", "data", "view", "diagnostics", "error"],
+  "additionalProperties": false,
+  "properties": {
+    "spec": {
+      "type": "integer",
+      "const": 1
+    },
+    "recipe": {
+      "type": "object",
+      "required": ["id", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "version": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ok", "degraded", "error"]
+    },
+    "data": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "null"]
+          }
+        },
+        "lists": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": ["string", "number", "boolean", "null"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "view": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": ["string", "null"] },
+        "layout": { "type": "string", "enum": ["list", "kv"] },
+        "rows": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["primary"],
+            "additionalProperties": false,
+            "properties": {
+              "primary": { "type": "string" },
+              "secondary": { "type": ["string", "null"] },
+              "trailing": { "type": ["string", "null"] },
+              "badge": {
+                "type": ["object", "null"],
+                "required": ["text", "severity"],
+                "additionalProperties": false,
+                "properties": {
+                  "text": { "type": "string" },
+                  "severity": {
+                    "type": "string",
+                    "enum": ["ok", "warn", "bad", "info", "neutral"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "items": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["label", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" }
+            }
+          }
+        },
+        "empty_text": { "type": ["string", "null"] },
+        "footer": { "type": ["string", "null"] },
+        "link": { "type": ["string", "null"] }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "required": ["fallbacks_used", "skipped_items", "warnings"],
+      "additionalProperties": false,
+      "properties": {
+        "fallbacks_used": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "locator_index"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "type": "string" },
+              "locator_index": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "skipped_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["list", "index", "reason"],
+            "additionalProperties": false,
+            "properties": {
+              "list": { "type": "string" },
+              "index": { "type": "integer", "minimum": 0 },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "error": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "UNSUPPORTED_SPEC",
+            "UNSUPPORTED_FEATURE",
+            "PARAM_INVALID",
+            "DOMAIN_NOT_ALLOWED",
+            "REDIRECT_NOT_ALLOWED",
+            "HTTP_STATUS",
+            "RESPONSE_TOO_LARGE",
+            "PARSE_ERROR",
+            "FIELD_MISSING",
+            "TOO_FEW_ITEMS",
+            "NETWORK_ERROR",
+            "TIMEOUT",
+            "RENDER_TIMEOUT",
+            "RENDER_UNAVAILABLE"
+          ]
+        },
+        "message": { "type": "string" },
+        "path": { "type": ["string", "null"] },
+        "http_status": { "type": ["integer", "null"] }
+      },
+      "required": ["code", "message"]
+    }
+  }
+}
