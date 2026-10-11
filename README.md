@@ -20,7 +20,7 @@ extraction semantics, and the conformance suite every client must pass.
 
 | Repo | Role |
 |---|---|
-| `peek-registry` | The recipes; validated against `schemas/recipe.schema.json` |
+| `peek-registry` | The recipes; validated by `peek-registry/scripts/validate_v2.py` against the `format: 2` profile (`docs/extraction-v2.md`, `conformance/cases-v2/`) |
 | `peek-android` | Kotlin client; extraction behaviour must satisfy `conformance/` |
 | `peek-cli` | Python workbench; same conformance gate |
 
