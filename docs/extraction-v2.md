@@ -23,7 +23,7 @@ by the registry validator. All keys are strings.
 | `version` | yes | int `>= 1` | — | `+1` per publish; displayed, bound per widget |
 | `name` | yes | 1–60 chars | — | Header fallback when title resolves empty |
 | `description` | yes | 1–280 chars | — | Browse card |
-| `params` | no | map string→string | `{}` | Plain defaults; no types, no validation |
+| `params` | no | map string→string or descriptor (§2.1) | `{}` | Plain defaults; descriptors add guidance |
 | `fetch` | yes | object (§2) | — | |
 | `rows` | no | CSS selector (§4) or list of `{sel, values}` groups (§4.6), `<= 500` chars per selector | absent | Absent = single-item (document) recipe |
 | `fields` | yes | non-empty map (§3) | — | |
@@ -41,6 +41,31 @@ by the registry validator. All keys are strings.
 - Params override fields in title interpolation (§5).
 - `fetch.url` MUST start with `https://`; the scheme+host MUST be literal
   (no `{..}` in the host) and the host MUST be listed in `fetch.allow`.
+
+### 2.1 Param descriptors (guided input)
+
+A param value is either a plain string (the default, as today) or a descriptor:
+
+```yaml
+params:
+  stop: 690313                         # plain: default only
+  competition:                         # descriptor
+    default: english-premiership
+    options:                           # optional closed set -> selection UI
+      - value: english-premiership
+        label: English Premiership
+    help: "..."                        # optional hint/lookup instructions
+```
+
+- `default` (required in descriptors): the effective value until overridden.
+- `options`: 1+ `{value, label}` entries, values unique, `default` MUST be
+  one of them. Clients SHOULD offer the labels as a selection list.
+- `help`: free text shown as input hint (e.g. where to find a stop code).
+- Unknown descriptor keys are rejected. Runtime overrides (`--param k=v`,
+  stored widget values) replace the effective value wholesale and are NOT
+  checked against `options` — authors need freedom to probe unverified values.
+- Resolution everywhere (URL, title, link): descriptors behave exactly as
+  their `default` until overridden.
 
 ## 3. Fetch
 
