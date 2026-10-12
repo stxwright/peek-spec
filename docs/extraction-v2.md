@@ -48,15 +48,13 @@ by the registry validator. All keys are strings.
 |---|---|---|---|
 | `url` | yes | https, literal host ∈ `allow` | — |
 | `allow` | yes | `>= 1` literal hostnames | — |
-| `every` | no | `>= 300` (`>= 900` with `render: js`) | `900` |
-| `render` | no | `static` \| `js` | `static` |
-| `wait` | no | CSS selector, `<= 500` chars, `render: js` only | — |
+| `every` | no | `>= 900` | `900` |
+| `wait` | no | CSS selector, `<= 500` chars | — |
 
 Client behaviour (as implemented):
 
-- The widget update path **always renders** via WebView. `render` is recorded
-  and reported but does not select a fetch strategy; static HTTP fetch exists
-  only in diagnostics.
+- The widget update path **always renders** via WebView. There is no static
+  fetch strategy; static HTTP fetch exists only in diagnostics.
 - `wait`, when present, is an **existence check**: ready when
   `document.querySelector(wait)` exists. Invalid selector ⇒ never ready ⇒
   collection falls through to timeout.
