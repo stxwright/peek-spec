@@ -79,7 +79,8 @@ params:
 Client behaviour (as implemented):
 
 - The widget update path **always renders** via WebView. There is no static
-  fetch strategy; static HTTP fetch exists only in diagnostics.
+  fetch strategy anywhere: the workbench snapshots only the rendered DOM,
+  which is the only DOM the extractor ever sees.
 - `wait`, when present, is an **existence check**: ready when
   `document.querySelector(wait)` exists. Invalid selector ⇒ never ready ⇒
   collection falls through to timeout.
